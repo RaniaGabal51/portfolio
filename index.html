@@ -1,0 +1,1520 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rania Gabal — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Rania Gabal — Frontend Developer portfolio. HTML5, CSS3, JavaScript, React.js."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+    <!-- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (code/labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind (utility layer) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Space Grotesk"', "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              mono: ['"JetBrains Mono"', "monospace"],
+            },
+            colors: {
+              primary: "#6C5CE7",
+              secondary: "#00D9F5",
+              accent: "#FF6B9D",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-body antialiased">
+    <!-- ============ LOADING SCREEN ============ -->
+    <div id="loading-screen" aria-hidden="true">
+      <div class="loader-mark">RG</div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+
+    <!-- ============ SCROLL PROGRESS BAR ============ -->
+    <div id="scroll-progress" role="presentation"></div>
+
+    <!-- ============ CUSTOM CURSOR (desktop only) ============ -->
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- ============ DECORATIVE FLOATING BLOBS ============ -->
+    <div class="bg-decor" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header id="navbar" class="fixed top-0 inset-x-0 z-40">
+      <nav
+        class="glass-nav mx-auto flex items-center justify-between px-5 sm:px-8 py-3"
+      >
+        <a
+          href="#hero"
+          class="font-display font-semibold text-lg tracking-tight flex items-center gap-2"
+          data-nav-link
+        >
+          <span class="logo-mark">RG</span>
+          <span class="hidden sm:inline"
+            >Rania<span class="text-primary">.</span>Gabal</span
+          >
+        </a>
+
+        <ul
+          id="nav-links"
+          class="hidden md:flex items-center gap-1 text-sm font-medium"
+        >
+          <li><a href="#hero" class="nav-link" data-nav-link>Home</a></li>
+          <li><a href="#about" class="nav-link" data-nav-link>About</a></li>
+          <li><a href="#skills" class="nav-link" data-nav-link>Skills</a></li>
+          <li>
+            <a href="#projects" class="nav-link" data-nav-link>Projects</a>
+          </li>
+          <li>
+            <a href="#services" class="nav-link" data-nav-link>Services</a>
+          </li>
+          <li>
+            <a href="#experience" class="nav-link" data-nav-link>Experience</a>
+          </li>
+          <!-- <li>
+            <a href="#certificates" class="nav-link" data-nav-link
+              >Certificates</a
+            >
+          </li> -->
+          <li><a href="#contact" class="nav-link" data-nav-link>Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark and light mode"
+            class="icon-btn"
+          >
+            <svg
+              id="icon-sun"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              />
+            </svg>
+            <svg
+              id="icon-moon"
+              class="w-5 h-5 hidden"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+            </svg>
+          </button>
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            class="icon-btn md:hidden"
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu panel -->
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <ul class="flex flex-col gap-1 p-4 text-sm font-medium">
+          <li><a href="#hero" class="nav-link block" data-nav-link>Home</a></li>
+          <li>
+            <a href="#about" class="nav-link block" data-nav-link>About</a>
+          </li>
+          <li>
+            <a href="#skills" class="nav-link block" data-nav-link>Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link block" data-nav-link
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#services" class="nav-link block" data-nav-link
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="nav-link block" data-nav-link
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#certificates" class="nav-link block" data-nav-link
+              >Certificates</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link block" data-nav-link>Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section
+        id="hero"
+        class="section-pad min-h-screen flex items-center pt-28 md:pt-24"
+      >
+        <div
+          class="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-12 items-center w-full"
+        >
+          <!-- Text column -->
+          <div class="order-2 md:order-1 reveal" data-reveal>
+            <p class="eyebrow mb-4">Hello, I'm</p>
+            <h1
+              class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mb-4"
+            >
+              Rania <span class="gradient-text">Gabal</span>
+            </h1>
+            <p
+              class="font-display text-xl sm:text-2xl text-slate-500 dark:text-slate-300 mb-6 h-8"
+            >
+              <span id="typing-text"></span><span class="typing-cursor">|</span>
+            </p>
+            <p
+              class="max-w-md text-slate-600 dark:text-slate-300/80 mb-8 leading-relaxed"
+            >
+              I build fast, accessible interfaces that turn design specs into
+              interactions people actually enjoy using — from the first click to
+              the last pixel. Clean code, thoughtful UI, and an eye for detail.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+              <a href="#projects" class="btn-primary" data-nav-link
+                >View Projects</a
+              >
+              <a href="assets/Rania-Gabal-CV.pdf" download class="btn-glass"
+                >Download CV</a
+              >
+              <a href="#contact" class="btn-outline" data-nav-link
+                >Contact Me</a
+              >
+            </div>
+
+            <div class="flex items-center gap-3">
+              <a
+                href="https://github.com/RaniaGabal51"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="GitHub"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rania-gabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="LinkedIn"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1ZM7 20.4H3.6V9H7v11.4ZM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="mailto:raniareda374@gmail.com"
+                class="social-btn"
+                aria-label="Email"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <path d="m4 6 8 7 8-7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Image column with orbiting skill chips (signature element) -->
+          <div
+            class="order-1 md:order-2 flex justify-center reveal"
+            data-reveal
+          >
+            <div class="hero-portrait">
+              <div class="orbit-ring orbit-ring--outer" aria-hidden="true">
+                <span class="orbit-chip" style="--angle: 0deg">HTML</span>
+                <span class="orbit-chip" style="--angle: 90deg">CSS</span>
+                <span class="orbit-chip" style="--angle: 180deg">JS</span>
+                <span class="orbit-chip" style="--angle: 270deg">React</span>
+              </div>
+              <div class="glass-card portrait-frame">
+                <img
+                  src="assets/images/photo.jpg"
+                  alt="Portrait of Rania Gabal"
+                  class="portrait-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ STATS ============ -->
+      <!-- <section aria-label="Statistics" class="section-pad">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="glass-card grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 p-8 sm:p-10 reveal" data-reveal>
+          <div class="text-center">
+            <p class="stat-number font-display" data-count="12">0</p>
+            <p class="stat-label">Projects Completed</p>
+          </div>
+          <div class="text-center">
+            <p class="stat-number font-display" data-count="2">0</p>
+            <p class="stat-label">Years Learning</p>
+          </div>
+          <div class="text-center">
+            <p class="stat-number font-display" data-count="15">0</p>
+            <p class="stat-label">Technologies</p>
+          </div>
+          <div class="text-center">
+            <p class="stat-number font-display" data-count="8">0</p>
+            <p class="stat-label">Happy Clients</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">About Me</p>
+            <h2 class="section-title">The developer behind the code</h2>
+          </div>
+
+          <div class="grid md:grid-cols-5 gap-8 items-start">
+            <div
+              class="md:col-span-3 glass-card p-8 sm:p-10 reveal"
+              data-reveal
+            >
+              <h3 class="font-display font-semibold text-xl mb-3">Who I am</h3>
+              <p
+                class="text-slate-600 dark:text-slate-300/80 leading-relaxed mb-6"
+              >
+                I'm Rania Gabal, a Frontend Developer who enjoys turning ideas
+                into interfaces that feel effortless to use. I care about the
+                details other people skip: the transition that's 100ms too slow,
+                the button that isn't quite reachable on mobile, the state
+                that's missing a loading indicator.
+              </p>
+              <h3 class="font-display font-semibold text-xl mb-3">
+                My journey
+              </h3>
+              <p
+                class="text-slate-600 dark:text-slate-300/80 leading-relaxed mb-6"
+              >
+                I started with HTML and CSS, curious about how websites were put
+                together, then moved into JavaScript to make them interactive.
+                Along the way I picked up React.js for building component-driven
+                apps, and Tailwind CSS for styling quickly without losing
+                control over design. Every project has pushed me to write
+                cleaner, more reusable code.
+              </p>
+              <h3 class="font-display font-semibold text-xl mb-3">
+                Where I'm headed
+              </h3>
+              <p
+                class="text-slate-600 dark:text-slate-300/80 leading-relaxed mb-8"
+              >
+                My goal is to keep growing as a frontend engineer by building
+                scalable web applications with React and Next.js, improving my
+                problem-solving skills, and contributing to products that
+                deliver great user experiences. I'm excited to learn modern
+                frontend technologies and collaborate with experienced teams
+                while continuously improving my craft.
+              </p>
+              <a href="assets/Rania-Gabal-CV.pdf" download class="btn-primary"
+                >Download Resume</a
+              >
+            </div>
+
+            <div class="md:col-span-2 flex flex-col gap-6">
+              <div class="glass-card p-6 reveal" data-reveal>
+                <h4 class="font-display font-semibold mb-4">Quick Facts</h4>
+                <ul class="space-y-3 text-sm">
+                  <li
+                    class="flex justify-between border-b border-white/10 pb-2"
+                  >
+                    <span class="text-slate-500 dark:text-slate-400"
+                      >Location</span
+                    ><span class="font-medium">Cairo, Egypt</span>
+                  </li>
+                  <li
+                    class="flex justify-between border-b border-white/10 pb-2"
+                  >
+                    <span class="text-slate-500 dark:text-slate-400">Focus</span
+                    ><span class="font-medium">Frontend / UI</span>
+                  </li>
+                  <li
+                    class="flex justify-between border-b border-white/10 pb-2"
+                  >
+                    <span class="text-slate-500 dark:text-slate-400"
+                      >Availability</span
+                    ><span class="font-medium">Open to work</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-slate-500 dark:text-slate-400"
+                      >Languages</span
+                    ><span class="font-medium">Arabic, English</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="glass-card p-6 reveal" data-reveal>
+                <h4 class="font-display font-semibold mb-4">
+                  Currently Learning
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">App Router</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section id="skills" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">Skills</p>
+            <h2 class="section-title">Tools I build with</h2>
+            <p class="section-sub">
+              A mix of core fundamentals, modern frameworks, and the workflow
+              tools that keep it all together.
+            </p>
+          </div>
+
+          <div
+            id="skills-grid"
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5"
+          >
+            <!-- Core Web -->
+            <div class="skill-card reveal" data-reveal data-level="95">
+              <span class="skill-icon">&lt;/&gt;</span>
+              <p class="skill-name">HTML5</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="90">
+              <span class="skill-icon">#</span>
+              <p class="skill-name">CSS3</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="92">
+              <span class="skill-icon">▦</span>
+              <p class="skill-name">Responsive Design</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="75">
+              <span class="skill-icon">B</span>
+              <p class="skill-name">Bootstrap</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="90">
+              <span class="skill-icon">T</span>
+              <p class="skill-name">Tailwind CSS</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="skill-card reveal" data-reveal data-level="85">
+              <span class="skill-icon">JS</span>
+              <p class="skill-name">JavaScript</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="70">
+              <span class="skill-icon">TS</span>
+              <p class="skill-name">TypeScript</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="82">
+              <span class="skill-icon">◧</span>
+              <p class="skill-name">DOM</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="80">
+              <span class="skill-icon">⇄</span>
+              <p class="skill-name">Fetch API</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="78">
+              <span class="skill-icon">API</span>
+              <p class="skill-name">REST API</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="80">
+              <span class="skill-icon">⏳</span>
+              <p class="skill-name">Async / Await</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="88">
+              <span class="skill-icon">⌗</span>
+              <p class="skill-name">LocalStorage</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="85">
+              <span class="skill-icon">{ }</span>
+              <p class="skill-name">JSON</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="75">
+              <span class="skill-icon">{}</span>
+              <p class="skill-name">OOP</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <!-- React Ecosystem -->
+            <div class="skill-card reveal" data-reveal data-level="80">
+              <span class="skill-icon">⚛</span>
+              <p class="skill-name">React.js</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="75">
+              <span class="skill-icon">RTK</span>
+              <p class="skill-name">Redux Toolkit</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-card reveal" data-reveal data-level="85">
+              <span class="skill-icon">⚡</span>
+              <p class="skill-name">Vite</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="80">
+              <span class="skill-icon">NPM</span>
+              <p class="skill-name">npm</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="85">
+              <span class="skill-icon">⎇</span>
+              <p class="skill-name">Git</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+
+            <div class="skill-card reveal" data-reveal data-level="85">
+              <span class="skill-icon">◎</span>
+              <p class="skill-name">GitHub</p>
+              <div class="skill-bar"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-10 reveal" data-reveal>
+            <p class="eyebrow justify-center">Projects</p>
+            <h2 class="section-title">Selected work</h2>
+            <p class="section-sub">
+              A few things I've built, from dashboards to full CRUD apps.
+            </p>
+          </div>
+
+          <!-- Search + Filter -->
+          <!-- <div
+            class="glass-card p-4 sm:p-5 mb-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between reveal"
+            data-reveal
+          >
+            <div class="relative w-full sm:max-w-xs">
+              <svg
+                class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                id="project-search"
+                type="search"
+                placeholder="Search projects…"
+                class="search-input"
+                aria-label="Search projects"
+              />
+            </div>
+            <div
+              id="project-filters"
+              class="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Filter projects by category"
+            >
+              <button class="filter-btn is-active" data-filter="all">
+                All
+              </button>
+              <button class="filter-btn" data-filter="web-app">Web App</button>
+              <button class="filter-btn" data-filter="dashboard">
+                Dashboard
+              </button>
+              <button class="filter-btn" data-filter="tool">Tool</button>
+            </div>
+          </div> -->
+
+          <div id="projects-grid" class="grid sm:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <article
+              class="project-card reveal"
+              data-reveal
+              data-category="web-app"
+              data-title="NutriPlan"
+              data-description="A meal-planning web app that helps users build weekly menus, track calories, and generate shopping lists automatically."
+              data-tech="HTML5, CSS3, JavaScript, LocalStorage, Fetch API"
+              data-features="Weekly meal planner · Calorie tracking · Auto-generated shopping list · Offline data with LocalStorage"
+              data-demo="https://raniagabal51.github.io/NutriPlan-/"
+              data-code="https://github.com/RaniaGabal51/NutriPlan-.git"
+            >
+              <div class="project-media">
+                <img
+                  src="assets/images/project-nutriplan.PNG"
+                  alt="NutriPlan project preview"
+                  loading="lazy"
+                />
+                <span class="project-category-pill">Web App</span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-semibold text-lg mb-2">
+                  NutriPlan
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80 mb-4">
+                  A meal-planning app for building weekly menus, tracking
+                  calories, and generating shopping lists automatically.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="tag">HTML5</span><span class="tag">CSS3</span
+                  ><span class="tag">JavaScript</span
+                  ><span class="tag">LocalStorage</span>
+                </div>
+                <div class="flex gap-3">
+                  <button
+                    type="button"
+                    class="btn-primary btn-sm"
+                    data-open-modal
+                  >
+                    View Details
+                  </button>
+                  <a
+                    href="https://github.com/RaniaGabal51/NutriPlan-.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline btn-sm"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="project-card reveal"
+              data-reveal
+              data-category="dashboard"
+              data-title="Space Explorer Dashboard"
+              data-description="An interactive dashboard that pulls public space data to display upcoming launches, planetary facts, and mission timelines."
+              data-tech="JavaScript, Fetch API, REST API, Chart rendering, Responsive Design"
+              data-features="Live launch schedule · Planetary data cards · Responsive charts · Async data fetching with loading states"
+              data-demo="https://raniagabal51.github.io/Space-Explorer-Dashboard/"
+              data-code="https://github.com/RaniaGabal51/Space-Explorer-Dashboard.git"
+            >
+              <div class="project-media">
+                <img
+                  src="assets/images/project-space.PNG"
+                  alt="Space Explorer Dashboard project preview"
+                  loading="lazy"
+                />
+                <span class="project-category-pill">Dashboard</span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-semibold text-lg mb-2">
+                  Space Explorer Dashboard
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80 mb-4">
+                  An interactive dashboard showing upcoming launches, planetary
+                  facts, and mission timelines from public data.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="tag">JavaScript</span
+                  ><span class="tag">REST API</span
+                  ><span class="tag">Async/Await</span>
+                </div>
+                <div class="flex gap-3">
+                  <button
+                    type="button"
+                    class="btn-primary btn-sm"
+                    data-open-modal
+                  >
+                    View Details
+                  </button>
+                  <a
+                    href="https://github.com/RaniaGabal51/Space-Explorer-Dashboard.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline btn-sm"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="project-card reveal"
+              data-reveal
+              data-category="web-app"
+              data-title="ContactHub"
+              data-description="A contact management app with full CRUD functionality, search, and category tagging, built around clean component structure."
+              data-tech="JavaScript (OOP), DOM, LocalStorage, Responsive Design"
+              data-features="Add / edit / delete contacts · Search & tag filtering · Data persistence · Form validation"
+              data-demo="https://raniagabal51.github.io/ContactHub-/"
+              data-code="https://github.com/RaniaGabal51/ContactHub-.git"
+            >
+              <div class="project-media">
+                <img
+                  src="assets/images/project-contacthub.PNG"
+                  alt="ContactHub project preview"
+                  loading="lazy"
+                />
+                <span class="project-category-pill">Web App</span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-semibold text-lg mb-2">
+                  ContactHub
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80 mb-4">
+                  A contact management app with full CRUD functionality, search,
+                  and category tagging.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="tag">OOP</span><span class="tag">DOM</span
+                  ><span class="tag">LocalStorage</span>
+                </div>
+                <div class="flex gap-3">
+                  <button
+                    type="button"
+                    class="btn-primary btn-sm"
+                    data-open-modal
+                  >
+                    View Details
+                  </button>
+                  <a
+                    href="https://github.com/RaniaGabal51/ContactHub-.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline btn-sm"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article
+              class="project-card reveal"
+              data-reveal
+              data-category="tool"
+              data-title="QuizMaster"
+              data-description="A configurable quiz-taking tool with timed questions, scoring, and a results summary, built to practice async data handling."
+              data-tech="JavaScript, Fetch API, Async/Await, Responsive Design"
+              data-features="Timed questions · Score tracking · Randomized question sets · Results summary screen"
+              data-demo="https://raniagabal51.github.io/QuizMaster/"
+              data-code="https://github.com/RaniaGabal51/QuizMaster.git"
+            >
+              <div class="project-media">
+                <img
+                  src="assets/images/project-quizmaster.PNG"
+                  alt="QuizMaster project preview"
+                  loading="lazy"
+                />
+                <span class="project-category-pill">Tool</span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-semibold text-lg mb-2">
+                  QuizMaster
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80 mb-4">
+                  A configurable quiz tool with timed questions, scoring, and a
+                  results summary screen.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="tag">Fetch API</span
+                  ><span class="tag">Async/Await</span
+                  ><span class="tag">JavaScript</span>
+                </div>
+                <div class="flex gap-3">
+                  <button
+                    type="button"
+                    class="btn-primary btn-sm"
+                    data-open-modal
+                  >
+                    View Details
+                  </button>
+                  <a
+                    href="https://github.com/RaniaGabal51/QuizMaster.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline btn-sm"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p
+            id="no-projects-msg"
+            class="text-center text-slate-500 dark:text-slate-400 mt-10 hidden"
+          >
+            No projects match your search. Try a different keyword or filter.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section id="services" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">Services</p>
+            <h2 class="section-title">How I can help</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card service-card reveal" data-reveal>
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-2">
+                Frontend Development
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                Turning designs into clean, maintainable, production-ready code.
+              </p>
+            </div>
+            <div class="glass-card service-card reveal" data-reveal>
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="5" y="2" width="14" height="20" rx="2" />
+                  <path d="M9 18h6" />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-2">
+                Responsive Websites
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                Interfaces that feel native on any screen, from phones to
+                widescreens.
+              </p>
+            </div>
+            <div class="glass-card service-card reveal" data-reveal>
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 12h18M12 3v18" />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-2">
+                Landing Pages
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                Focused, fast-loading pages designed to convert visitors into
+                action.
+              </p>
+            </div>
+            <div class="glass-card service-card reveal" data-reveal>
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 3v18h18M7 15l4-4 3 3 5-6" />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-2">
+                Dashboards
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                Data-dense interfaces that stay readable, organized, and fast.
+              </p>
+            </div>
+            <div class="glass-card service-card reveal" data-reveal>
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 17V7a2 2 0 0 1 2-2h8l6 6v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                  />
+                  <path d="M14 5v6h6" />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-2">
+                REST API Integration
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                Connecting interfaces to real data with clean, resilient fetch
+                logic.
+              </p>
+            </div>
+            <div class="glass-card service-card reveal" data-reveal>
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="m12 2 3 6 6.5 1-4.7 4.6 1.1 6.5L12 17l-5.9 3.1 1.1-6.5L2.5 9l6.5-1z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg mb-2">
+                UI Implementation
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                Pixel-accurate builds from Figma or design specs, with real
+                interactivity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCE ============ -->
+      <section id="experience" class="section-pad">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">Journey</p>
+            <h2 class="section-title">My Professional Journey</h2>
+          </div>
+
+          <ol class="timeline">
+            <!-- Route Academy -->
+            <li class="timeline-item reveal" data-reveal>
+              <span class="timeline-dot"></span>
+              <div class="glass-card p-6">
+                <p class="timeline-date">Feb 2026 — Present</p>
+                <h3 class="font-display font-semibold text-lg mb-1">
+                  Frontend Development Track
+                </h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">
+                  Route Academy
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                  Expanding my frontend expertise through hands-on training in
+                  JavaScript, React.js, TypeScript, and Next.js while building
+                  real-world projects and applying modern development best
+                  practices.
+                </p>
+              </div>
+            </li>
+
+            <!-- Innovologia -->
+            <li class="timeline-item reveal" data-reveal>
+              <span class="timeline-dot"></span>
+              <div class="glass-card p-6">
+                <p class="timeline-date">Aug 2025 — May 2026</p>
+                <h3 class="font-display font-semibold text-lg mb-1">
+                  Senior Digital Operations Specialist
+                </h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">
+                  Innovologia
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                  Managed digital operations, coordinated internal workflows,
+                  and supported business processes while strengthening
+                  problem-solving, communication, and teamwork skills in a
+                  professional environment.
+                </p>
+              </div>
+            </li>
+
+            <!-- Ro'od Misr -->
+            <li class="timeline-item reveal" data-reveal>
+              <span class="timeline-dot"></span>
+              <div class="glass-card p-6">
+                <p class="timeline-date">Jun 2025</p>
+                <h3 class="font-display font-semibold text-lg mb-1">
+                  Frontend Development Training
+                </h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">
+                  Ro'od Misr Digital Initiative
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                  Completed an intensive frontend development program covering
+                  HTML5, CSS3, JavaScript, React.js, Tailwind CSS, Git, GitHub,
+                  REST APIs, and responsive web development through practical
+                  projects.
+                </p>
+              </div>
+            </li>
+
+            <!-- University -->
+            <li class="timeline-item reveal" data-reveal>
+              <span class="timeline-dot"></span>
+              <div class="glass-card p-6">
+                <p class="timeline-date">2021 — Jul 2025</p>
+                <h3 class="font-display font-semibold text-lg mb-1">
+                  Bachelor's Degree
+                </h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">
+                  Faculty of Management Technology & Information Systems
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300/80">
+                  Graduated with a bachelor's degree while building a strong
+                  foundation in software development and developing multiple
+                  frontend projects using modern web technologies.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ CERTIFICATES ============ -->
+      <!-- <section id="certificates" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">Certificates</p>
+            <h2 class="section-title">Learning milestones</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="cert-card reveal" data-reveal>
+              <img
+                src="assets/images/cert-1.svg"
+                alt="Placeholder certificate 1"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-display font-semibold">
+                  Responsive Web Design
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Placeholder Issuer · 2023
+                </p>
+              </div>
+            </div>
+            <div class="cert-card reveal" data-reveal>
+              <img
+                src="assets/images/cert-2.svg"
+                alt="Placeholder certificate 2"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-display font-semibold">
+                  JavaScript Algorithms
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Placeholder Issuer · 2023
+                </p>
+              </div>
+            </div>
+            <div class="cert-card reveal" data-reveal>
+              <img
+                src="assets/images/cert-3.svg"
+                alt="Placeholder certificate 3"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-display font-semibold">
+                  React.js Fundamentals
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Placeholder Issuer · 2024
+                </p>
+              </div>
+            </div>
+            <div class="cert-card reveal" data-reveal>
+              <img
+                src="assets/images/cert-4.svg"
+                alt="Placeholder certificate 4"
+                loading="lazy"
+              />
+              <div class="p-4">
+                <h3 class="font-display font-semibold">REST API Integration</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Placeholder Issuer · 2024
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">Contact</p>
+            <h2 class="section-title">Let's work together</h2>
+            <p class="section-sub">
+              Have a project in mind, or just want to say hi? My inbox is open.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-5 gap-8">
+            <!-- Contact info -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+              <a
+                href="tel:01024508644"
+                class="glass-card contact-info-row reveal"
+                data-reveal
+              >
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"
+                    /></svg
+                ></span>
+                <span>
+                  <span class="block text-xs text-slate-500 dark:text-slate-400"
+                    >Phone</span
+                  >
+                  <span class="font-medium">01024508644</span>
+                </span>
+              </a>
+              <a
+                href="mailto:raniareda374@gmail.com"
+                class="glass-card contact-info-row reveal"
+                data-reveal
+              >
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M4 4h16v16H4z" />
+                    <path d="m4 6 8 7 8-7" /></svg
+                ></span>
+                <span>
+                  <span class="block text-xs text-slate-500 dark:text-slate-400"
+                    >Email</span
+                  >
+                  <span class="font-medium break-all"
+                    >raniareda374@gmail.com</span
+                  >
+                </span>
+              </a>
+              <a
+                href="https://github.com/RaniaGabal51"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="glass-card contact-info-row reveal"
+                data-reveal
+              >
+                <span class="contact-icon"
+                  ><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"
+                    /></svg
+                ></span>
+                <span>
+                  <span class="block text-xs text-slate-500 dark:text-slate-400"
+                    >GitHub</span
+                  >
+                  <span class="font-medium">github.com/RaniaGabal51</span>
+                </span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rania-gabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="glass-card contact-info-row reveal"
+                data-reveal
+              >
+                <span class="contact-icon"
+                  ><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1ZM7 20.4H3.6V9H7v11.4ZM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0Z"
+                    /></svg
+                ></span>
+                <span>
+                  <span class="block text-xs text-slate-500 dark:text-slate-400"
+                    >LinkedIn</span
+                  >
+                  <span class="font-medium">linkedin.com/in/rania-gabal</span>
+                </span>
+              </a>
+              <div class="glass-card contact-info-row reveal" data-reveal>
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" /></svg
+                ></span>
+                <span>
+                  <span class="block text-xs text-slate-500 dark:text-slate-400"
+                    >Location</span
+                  >
+                  <span class="font-medium">Cairo, Egypt</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Contact form -->
+            <form
+              id="contact-form"
+              class="lg:col-span-3 glass-card p-8 reveal"
+              data-reveal
+              novalidate
+            >
+              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                <div class="field-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    placeholder="Your name"
+                  />
+                  <span class="field-error" data-error-for="name"></span>
+                </div>
+                <div class="field-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                  />
+                  <span class="field-error" data-error-for="email"></span>
+                </div>
+              </div>
+              <div class="field-group mb-5">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="What's this about?"
+                />
+                <span class="field-error" data-error-for="subject"></span>
+              </div>
+              <div class="field-group mb-6">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell me about your project…"
+                ></textarea>
+                <span class="field-error" data-error-for="message"></span>
+              </div>
+              <button type="submit" class="btn-primary w-full sm:w-auto">
+                Send Message
+              </button>
+             <p
+  id="form-success"
+  class="hidden mt-4 text-sm"
+  role="status"
+></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14">
+        <div class="grid sm:grid-cols-3 gap-10 mb-10">
+          <div>
+            <a
+              href="#hero"
+              class="font-display font-semibold text-lg flex items-center gap-2 mb-3"
+              data-nav-link
+            >
+              <span class="logo-mark">RG</span> Rania Gabal
+            </a>
+            <p class="text-sm text-slate-500 dark:text-slate-400 max-w-xs">
+              Frontend Developer crafting clean, responsive interfaces with
+              HTML, CSS, JavaScript, and React.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-display font-semibold mb-3">Quick Links</h4>
+            <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+              <li>
+                <a href="#about" class="hover:text-primary" data-nav-link
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="hover:text-primary" data-nav-link
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-primary" data-nav-link
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-primary" data-nav-link
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-display font-semibold mb-3">Let's Connect</h4>
+            <div class="flex gap-3">
+              <a
+                href="https://github.com/RaniaGabal51"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="GitHub"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.6 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rania-gabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="LinkedIn"
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1ZM7 20.4H3.6V9H7v11.4ZM22.2 0H1.8C.8 0 0 .8 0 1.8v20.4C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.8V1.8C24 .8 23.2 0 22.2 0Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="mailto:raniareda374@gmail.com"
+                class="social-btn"
+                aria-label="Email"
+              >
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <path d="m4 6 8 7 8-7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+   <div
+  class="flex items-center justify-center pt-8 border-t border-white/10 text-sm text-slate-500 dark:text-slate-400"
+>
+  <p>
+    &copy; <span id="current-year"></span> Rania Gabal. All rights reserved.
+  </p>
+</div>
+      </div>
+    </footer>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button
+      id="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      class="icon-btn back-to-top"
+    >
+      <svg
+        class="w-5 h-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="m18 15-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- ============ PROJECT MODAL ============ -->
+    <div id="project-modal" class="modal-overlay" aria-hidden="true">
+      <div
+        class="modal-panel glass-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button
+          type="button"
+          id="modal-close"
+          class="icon-btn modal-close"
+          aria-label="Close project details"
+        >
+          <svg
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <img id="modal-image" src="" alt="" class="modal-image" />
+        <div class="p-6 sm:p-8">
+          <h3
+            id="modal-title"
+            class="font-display font-bold text-2xl mb-2"
+          ></h3>
+          <p
+            id="modal-description"
+            class="text-slate-600 dark:text-slate-300/80 mb-5"
+          ></p>
+
+          <h4
+            class="font-display font-semibold text-sm uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2"
+          >
+            Technologies
+          </h4>
+          <p id="modal-tech" class="text-sm mb-5"></p>
+
+          <h4
+            class="font-display font-semibold text-sm uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2"
+          >
+            Key Features
+          </h4>
+          <p id="modal-features" class="text-sm mb-7"></p>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              id="modal-demo"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+              >Live Demo</a
+            >
+            <a
+              id="modal-code"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="assets/js/script.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
