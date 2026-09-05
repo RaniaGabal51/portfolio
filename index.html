@@ -304,38 +304,28 @@
       </section>
 
       <!-- ============ ABOUT ============ -->
-      <section id="about" class="py-24">
-        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <section id="about" class="section-pad">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8">
           <!-- Header -->
-          <div class="mb-14 text-center">
-            <p
-              class="mb-3 flex justify-center font-mono text-sm font-medium uppercase tracking-wider text-indigo-400"
-            >
-              About Me
-            </p>
+          <div class="text-center mb-14 reveal" data-reveal>
+            <p class="eyebrow justify-center">About Me</p>
 
-            <h2
-              class="font-['Space_Grotesk'] text-3xl font-semibold tracking-tight text-white sm:text-4xl"
-            >
-              More than just writing code
-            </h2>
+            <h2 class="section-title">More than just writing code</h2>
           </div>
 
           <!-- Main Content -->
           <div class="grid items-stretch gap-8 lg:grid-cols-2">
             <!-- Left Side -->
-            <div
-              class="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl sm:p-10"
-            >
+            <div class="glass-card p-8 sm:p-10 reveal" data-reveal>
               <h3
-                class="mb-6 font-['Space_Grotesk'] text-2xl font-semibold leading-tight text-white sm:text-3xl"
+                class="font-display text-2xl font-semibold leading-tight mb-6 sm:text-3xl"
               >
                 A Frontend Developer passionate about building experiences for
                 the web.
               </h3>
 
               <p
-                class="mb-5 text-sm leading-relaxed text-slate-300/80 sm:text-base"
+                class="mb-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300/80 sm:text-base"
               >
                 I enjoy turning ideas into responsive, interactive, and
                 user-friendly web applications. I'm passionate about creating
@@ -344,7 +334,7 @@
               </p>
 
               <p
-                class="mb-8 text-sm leading-relaxed text-slate-300/80 sm:text-base"
+                class="mb-8 text-sm leading-relaxed text-slate-600 dark:text-slate-300/80 sm:text-base"
               >
                 I work mainly with modern frontend technologies like JavaScript,
                 TypeScript, React, and Next.js, and I'm always focused on
@@ -355,24 +345,28 @@
               <!-- Quick Info -->
               <div class="mb-8 grid grid-cols-2 gap-5">
                 <div>
-                  <span class="text-sm text-slate-500"> Based in </span>
+                  <span class="text-sm text-slate-500 dark:text-slate-400">
+                    Based in
+                  </span>
 
-                  <p class="mt-1 font-medium text-white">Cairo, Egypt</p>
+                  <p class="mt-1 font-medium text-slate-900 dark:text-white">
+                    Cairo, Egypt
+                  </p>
                 </div>
 
                 <div>
-                  <span class="text-sm text-slate-500"> Status </span>
+                  <span class="text-sm text-slate-500 dark:text-slate-400">
+                    Status
+                  </span>
 
-                  <p class="mt-1 font-medium text-white">Open to Work</p>
+                  <p class="mt-1 font-medium text-slate-900 dark:text-white">
+                    Open to Work
+                  </p>
                 </div>
               </div>
 
               <!-- Resume Button -->
-              <a
-                href="assets/Rania-Gabal-CV.pdf"
-                download
-                class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-400 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-indigo-500/30"
-              >
+              <a href="assets/Rania-Gabal-CV.pdf" download class="btn-primary">
                 Download Resume
               </a>
             </div>
@@ -380,23 +374,19 @@
             <!-- Right Side -->
             <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
               <!-- Card 1 -->
-              <div
-                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
-              >
-                <div
-                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
-                >
+              <div class="about-feature glass-card p-6 reveal" data-reveal>
+                <div class="about-icon">
                   <i class="devicon-codepen-plain"></i>
                 </div>
 
                 <div>
-                  <h4
-                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
-                  >
+                  <h4 class="font-display text-lg font-semibold mb-2">
                     Clean & Maintainable Code
                   </h4>
 
-                  <p class="text-sm leading-relaxed text-slate-300/70">
+                  <p
+                    class="text-sm leading-relaxed text-slate-600 dark:text-slate-300/70"
+                  >
                     I focus on writing reusable, organized, and scalable code
                     that makes applications easier to maintain.
                   </p>
@@ -404,23 +394,19 @@
               </div>
 
               <!-- Card 2 -->
-              <div
-                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
-              >
-                <div
-                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
-                >
+              <div class="about-feature glass-card p-6 reveal" data-reveal>
+                <div class="about-icon">
                   <i class="devicon-css3-plain"></i>
                 </div>
 
                 <div>
-                  <h4
-                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
-                  >
+                  <h4 class="font-display text-lg font-semibold mb-2">
                     Responsive Design
                   </h4>
 
-                  <p class="text-sm leading-relaxed text-slate-300/70">
+                  <p
+                    class="text-sm leading-relaxed text-slate-600 dark:text-slate-300/70"
+                  >
                     Creating interfaces that look and work smoothly across
                     different screen sizes and devices.
                   </p>
@@ -428,23 +414,19 @@
               </div>
 
               <!-- Card 3 -->
-              <div
-                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
-              >
-                <div
-                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
-                >
+              <div class="about-feature glass-card p-6 reveal" data-reveal>
+                <div class="about-icon">
                   <i class="devicon-figma-plain"></i>
                 </div>
 
                 <div>
-                  <h4
-                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
-                  >
+                  <h4 class="font-display text-lg font-semibold mb-2">
                     Attention to Detail
                   </h4>
 
-                  <p class="text-sm leading-relaxed text-slate-300/70">
+                  <p
+                    class="text-sm leading-relaxed text-slate-600 dark:text-slate-300/70"
+                  >
                     From small interactions to loading and error states, I care
                     about the details that improve the overall user experience.
                   </p>
@@ -452,23 +434,19 @@
               </div>
 
               <!-- Card 4 -->
-              <div
-                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
-              >
-                <div
-                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
-                >
+              <div class="about-feature glass-card p-6 reveal" data-reveal>
+                <div class="about-icon">
                   <i class="devicon-github-original"></i>
                 </div>
 
                 <div>
-                  <h4
-                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
-                  >
+                  <h4 class="font-display text-lg font-semibold mb-2">
                     Always Growing
                   </h4>
 
-                  <p class="text-sm leading-relaxed text-slate-300/70">
+                  <p
+                    class="text-sm leading-relaxed text-slate-600 dark:text-slate-300/70"
+                  >
                     I continuously challenge myself by building projects,
                     exploring modern technologies, and improving my
                     problem-solving skills.
