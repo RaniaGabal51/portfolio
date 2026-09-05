@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
   initSkillBars();
   initProjectsSearchFilter();
-  initProjectModal();
   initContactForm();
   initFooterYear();
 });
@@ -420,71 +419,7 @@ function initProjectsSearchFilter() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   14. Project details modal
-   -------------------------------------------------------------------------- */
-function initProjectModal() {
-  const modal = document.getElementById("project-modal");
-  const closeBtn = document.getElementById("modal-close");
-  if (!modal) return;
 
-  const titleEl = document.getElementById("modal-title");
-  const descEl = document.getElementById("modal-description");
-  const techEl = document.getElementById("modal-tech");
-  const featuresEl = document.getElementById("modal-features");
-  const demoEl = document.getElementById("modal-demo");
-  const codeEl = document.getElementById("modal-code");
-  const imageEl = document.getElementById("modal-image");
-
-  let lastFocused = null;
-
-  const openModal = (card) => {
-    titleEl.textContent = card.getAttribute("data-title") || "";
-    descEl.textContent = card.getAttribute("data-description") || "";
-    techEl.textContent = card.getAttribute("data-tech") || "";
-    featuresEl.textContent = card.getAttribute("data-features") || "";
-    demoEl.href = card.getAttribute("data-demo") || "#";
-    codeEl.href = card.getAttribute("data-code") || "#";
-
-    const img = card.querySelector(".project-media img");
-    if (img) {
-      imageEl.src = img.getAttribute("src");
-      imageEl.alt = img.getAttribute("alt") || "";
-    }
-
-    lastFocused = document.activeElement;
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    closeBtn.focus();
-  };
-
-  const closeModal = () => {
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    if (lastFocused) lastFocused.focus();
-  };
-
-  document.querySelectorAll("[data-open-modal]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const card = btn.closest(".project-card");
-      if (card) openModal(card);
-    });
-  });
-
-  closeBtn.addEventListener("click", closeModal);
-
-  // Click outside the panel closes the modal
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  // Escape key closes the modal
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
-  });
-}
 
 /* --------------------------------------------------------------------------
    15. Contact form — client-side validation + simulated submit

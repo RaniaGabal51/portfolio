@@ -14,6 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
@@ -90,9 +95,7 @@
           <li>
             <a href="#projects" class="nav-link" data-nav-link>Projects</a>
           </li>
-          <li>
-            <a href="#services" class="nav-link" data-nav-link>Services</a>
-          </li>
+
           <li>
             <a href="#experience" class="nav-link" data-nav-link>Experience</a>
           </li>
@@ -170,11 +173,7 @@
               >Projects</a
             >
           </li>
-          <li>
-            <a href="#services" class="nav-link block" data-nav-link
-              >Services</a
-            >
-          </li>
+
           <li>
             <a href="#experience" class="nav-link block" data-nav-link
               >Experience</a
@@ -304,122 +303,176 @@
         </div>
       </section>
 
-      <!-- ============ STATS ============ -->
-      <!-- <section aria-label="Statistics" class="section-pad">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="glass-card grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 p-8 sm:p-10 reveal" data-reveal>
-          <div class="text-center">
-            <p class="stat-number font-display" data-count="12">0</p>
-            <p class="stat-label">Projects Completed</p>
-          </div>
-          <div class="text-center">
-            <p class="stat-number font-display" data-count="2">0</p>
-            <p class="stat-label">Years Learning</p>
-          </div>
-          <div class="text-center">
-            <p class="stat-number font-display" data-count="15">0</p>
-            <p class="stat-label">Technologies</p>
-          </div>
-          <div class="text-center">
-            <p class="stat-number font-display" data-count="8">0</p>
-            <p class="stat-label">Happy Clients</p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
       <!-- ============ ABOUT ============ -->
-      <section id="about" class="section-pad">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-          <div class="text-center mb-14 reveal" data-reveal>
-            <p class="eyebrow justify-center">About Me</p>
-            <h2 class="section-title">The developer behind the code</h2>
+      <section id="about" class="py-24">
+        <div class="mx-auto max-w-6xl px-5 sm:px-8">
+          <!-- Header -->
+          <div class="mb-14 text-center">
+            <p
+              class="mb-3 flex justify-center font-mono text-sm font-medium uppercase tracking-wider text-indigo-400"
+            >
+              About Me
+            </p>
+
+            <h2
+              class="font-['Space_Grotesk'] text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            >
+              More than just writing code
+            </h2>
           </div>
 
-          <div class="grid md:grid-cols-5 gap-8 items-start">
+          <!-- Main Content -->
+          <div class="grid items-stretch gap-8 lg:grid-cols-2">
+            <!-- Left Side -->
             <div
-              class="md:col-span-3 glass-card p-8 sm:p-10 reveal"
-              data-reveal
+              class="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl sm:p-10"
             >
-              <h3 class="font-display font-semibold text-xl mb-3">Who I am</h3>
-              <p
-                class="text-slate-600 dark:text-slate-300/80 leading-relaxed mb-6"
+              <h3
+                class="mb-6 font-['Space_Grotesk'] text-2xl font-semibold leading-tight text-white sm:text-3xl"
               >
-                I'm Rania Gabal, a Frontend Developer who enjoys turning ideas
-                into interfaces that feel effortless to use. I care about the
-                details other people skip: the transition that's 100ms too slow,
-                the button that isn't quite reachable on mobile, the state
-                that's missing a loading indicator.
-              </p>
-              <h3 class="font-display font-semibold text-xl mb-3">
-                My journey
+                A Frontend Developer passionate about building experiences for
+                the web.
               </h3>
+
               <p
-                class="text-slate-600 dark:text-slate-300/80 leading-relaxed mb-6"
+                class="mb-5 text-sm leading-relaxed text-slate-300/80 sm:text-base"
               >
-                I started with HTML and CSS, curious about how websites were put
-                together, then moved into JavaScript to make them interactive.
-                Along the way I picked up React.js for building component-driven
-                apps, and Tailwind CSS for styling quickly without losing
-                control over design. Every project has pushed me to write
-                cleaner, more reusable code.
+                I enjoy turning ideas into responsive, interactive, and
+                user-friendly web applications. I'm passionate about creating
+                clean interfaces and writing maintainable code that makes
+                products easier to use and scale.
               </p>
-              <h3 class="font-display font-semibold text-xl mb-3">
-                Where I'm headed
-              </h3>
+
               <p
-                class="text-slate-600 dark:text-slate-300/80 leading-relaxed mb-8"
+                class="mb-8 text-sm leading-relaxed text-slate-300/80 sm:text-base"
               >
-                My goal is to keep growing as a frontend engineer by building
-                scalable web applications with React and Next.js, improving my
-                problem-solving skills, and contributing to products that
-                deliver great user experiences. I'm excited to learn modern
-                frontend technologies and collaborate with experienced teams
-                while continuously improving my craft.
+                I work mainly with modern frontend technologies like JavaScript,
+                TypeScript, React, and Next.js, and I'm always focused on
+                improving both my technical skills and the quality of the
+                products I build.
               </p>
-              <a href="assets/Rania-Gabal-CV.pdf" download class="btn-primary"
-                >Download Resume</a
+
+              <!-- Quick Info -->
+              <div class="mb-8 grid grid-cols-2 gap-5">
+                <div>
+                  <span class="text-sm text-slate-500"> Based in </span>
+
+                  <p class="mt-1 font-medium text-white">Cairo, Egypt</p>
+                </div>
+
+                <div>
+                  <span class="text-sm text-slate-500"> Status </span>
+
+                  <p class="mt-1 font-medium text-white">Open to Work</p>
+                </div>
+              </div>
+
+              <!-- Resume Button -->
+              <a
+                href="assets/Rania-Gabal-CV.pdf"
+                download
+                class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-400 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-indigo-500/30"
               >
+                Download Resume
+              </a>
             </div>
 
-            <div class="md:col-span-2 flex flex-col gap-6">
-              <div class="glass-card p-6 reveal" data-reveal>
-                <h4 class="font-display font-semibold mb-4">Quick Facts</h4>
-                <ul class="space-y-3 text-sm">
-                  <li
-                    class="flex justify-between border-b border-white/10 pb-2"
+            <!-- Right Side -->
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+              <!-- Card 1 -->
+              <div
+                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
+              >
+                <div
+                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
+                >
+                  <i class="devicon-codepen-plain"></i>
+                </div>
+
+                <div>
+                  <h4
+                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
                   >
-                    <span class="text-slate-500 dark:text-slate-400"
-                      >Location</span
-                    ><span class="font-medium">Cairo, Egypt</span>
-                  </li>
-                  <li
-                    class="flex justify-between border-b border-white/10 pb-2"
-                  >
-                    <span class="text-slate-500 dark:text-slate-400">Focus</span
-                    ><span class="font-medium">Frontend / UI</span>
-                  </li>
-                  <li
-                    class="flex justify-between border-b border-white/10 pb-2"
-                  >
-                    <span class="text-slate-500 dark:text-slate-400"
-                      >Availability</span
-                    ><span class="font-medium">Open to work</span>
-                  </li>
-                  <li class="flex justify-between">
-                    <span class="text-slate-500 dark:text-slate-400"
-                      >Languages</span
-                    ><span class="font-medium">Arabic, English</span>
-                  </li>
-                </ul>
+                    Clean & Maintainable Code
+                  </h4>
+
+                  <p class="text-sm leading-relaxed text-slate-300/70">
+                    I focus on writing reusable, organized, and scalable code
+                    that makes applications easier to maintain.
+                  </p>
+                </div>
               </div>
-              <div class="glass-card p-6 reveal" data-reveal>
-                <h4 class="font-display font-semibold mb-4">
-                  Currently Learning
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="tag">Next.js</span>
-                  <span class="tag">App Router</span>
+
+              <!-- Card 2 -->
+              <div
+                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
+              >
+                <div
+                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
+                >
+                  <i class="devicon-css3-plain"></i>
+                </div>
+
+                <div>
+                  <h4
+                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
+                  >
+                    Responsive Design
+                  </h4>
+
+                  <p class="text-sm leading-relaxed text-slate-300/70">
+                    Creating interfaces that look and work smoothly across
+                    different screen sizes and devices.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
+              >
+                <div
+                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
+                >
+                  <i class="devicon-figma-plain"></i>
+                </div>
+
+                <div>
+                  <h4
+                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
+                  >
+                    Attention to Detail
+                  </h4>
+
+                  <p class="text-sm leading-relaxed text-slate-300/70">
+                    From small interactions to loading and error states, I care
+                    about the details that improve the overall user experience.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="group flex items-start gap-[18px] rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:translate-x-1.5 hover:border-indigo-400/20"
+              >
+                <div
+                  class="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-indigo-500/10 text-xl text-indigo-400"
+                >
+                  <i class="devicon-github-original"></i>
+                </div>
+
+                <div>
+                  <h4
+                    class="mb-2 font-['Space_Grotesk'] text-lg font-semibold text-white"
+                  >
+                    Always Growing
+                  </h4>
+
+                  <p class="text-sm leading-relaxed text-slate-300/70">
+                    I continuously challenge myself by building projects,
+                    exploring modern technologies, and improving my
+                    problem-solving skills.
+                  </p>
                 </div>
               </div>
             </div>
@@ -429,147 +482,87 @@
 
       <!-- ============ SKILLS ============ -->
       <section id="skills" class="section-pad">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="max-w-5xl mx-auto px-5 sm:px-8">
+          <!-- Header -->
           <div class="text-center mb-14 reveal" data-reveal>
             <p class="eyebrow justify-center">Skills</p>
-            <h2 class="section-title">Tools I build with</h2>
+
+            <h2 class="section-title">Technologies I work with</h2>
+
             <p class="section-sub">
-              A mix of core fundamentals, modern frameworks, and the workflow
-              tools that keep it all together.
+              The tools and technologies I use to build modern web experiences.
             </p>
           </div>
 
-          <div
-            id="skills-grid"
-            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5"
-          >
-            <!-- Core Web -->
-            <div class="skill-card reveal" data-reveal data-level="95">
-              <span class="skill-icon">&lt;/&gt;</span>
-              <p class="skill-name">HTML5</p>
-              <div class="skill-bar"><span></span></div>
+          <!-- Skills -->
+          <div class="skills-icons reveal" data-reveal>
+            <div class="skill-item">
+              <i class="devicon-html5-plain colored"></i>
+              <span>HTML5</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="90">
-              <span class="skill-icon">#</span>
-              <p class="skill-name">CSS3</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-css3-plain colored"></i>
+              <span>CSS3</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="92">
-              <span class="skill-icon">▦</span>
-              <p class="skill-name">Responsive Design</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-javascript-plain colored"></i>
+              <span>JavaScript</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="75">
-              <span class="skill-icon">B</span>
-              <p class="skill-name">Bootstrap</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-typescript-plain colored"></i>
+              <span>TypeScript</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="90">
-              <span class="skill-icon">T</span>
-              <p class="skill-name">Tailwind CSS</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-react-original colored"></i>
+              <span>React</span>
             </div>
 
-            <!-- JavaScript -->
-            <div class="skill-card reveal" data-reveal data-level="85">
-              <span class="skill-icon">JS</span>
-              <p class="skill-name">JavaScript</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-nextjs-plain"></i>
+              <span>Next.js</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="70">
-              <span class="skill-icon">TS</span>
-              <p class="skill-name">TypeScript</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-redux-original colored"></i>
+              <span>Redux</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="82">
-              <span class="skill-icon">◧</span>
-              <p class="skill-name">DOM</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-tailwindcss-original colored"></i>
+              <span>Tailwind</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="80">
-              <span class="skill-icon">⇄</span>
-              <p class="skill-name">Fetch API</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-bootstrap-plain colored"></i>
+              <span>Bootstrap</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="78">
-              <span class="skill-icon">API</span>
-              <p class="skill-name">REST API</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-git-plain colored"></i>
+              <span>Git</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="80">
-              <span class="skill-icon">⏳</span>
-              <p class="skill-name">Async / Await</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-github-original"></i>
+              <span>GitHub</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="88">
-              <span class="skill-icon">⌗</span>
-              <p class="skill-name">LocalStorage</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-vitejs-plain colored"></i>
+              <span>Vite</span>
             </div>
 
-            <div class="skill-card reveal" data-reveal data-level="85">
-              <span class="skill-icon">{ }</span>
-              <p class="skill-name">JSON</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <div class="skill-card reveal" data-reveal data-level="75">
-              <span class="skill-icon">{}</span>
-              <p class="skill-name">OOP</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <!-- React Ecosystem -->
-            <div class="skill-card reveal" data-reveal data-level="80">
-              <span class="skill-icon">⚛</span>
-              <p class="skill-name">React.js</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <div class="skill-card reveal" data-reveal data-level="75">
-              <span class="skill-icon">RTK</span>
-              <p class="skill-name">Redux Toolkit</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <!-- Tools -->
-            <div class="skill-card reveal" data-reveal data-level="85">
-              <span class="skill-icon">⚡</span>
-              <p class="skill-name">Vite</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <div class="skill-card reveal" data-reveal data-level="80">
-              <span class="skill-icon">NPM</span>
-              <p class="skill-name">npm</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <div class="skill-card reveal" data-reveal data-level="85">
-              <span class="skill-icon">⎇</span>
-              <p class="skill-name">Git</p>
-              <div class="skill-bar"><span></span></div>
-            </div>
-
-            <div class="skill-card reveal" data-reveal data-level="85">
-              <span class="skill-icon">◎</span>
-              <p class="skill-name">GitHub</p>
-              <div class="skill-bar"><span></span></div>
+            <div class="skill-item">
+              <i class="devicon-npm-original-wordmark colored"></i>
+              <span>npm</span>
             </div>
           </div>
         </div>
       </section>
-
       <!-- ============ PROJECTS ============ -->
       <section id="projects" class="section-pad">
         <div class="max-w-6xl mx-auto px-5 sm:px-8">
@@ -621,9 +614,69 @@
               <button class="filter-btn" data-filter="tool">Tool</button>
             </div>
           </div> -->
-
+          <!-- Project 1-->
           <div id="projects-grid" class="grid sm:grid-cols-2 gap-8">
-            <!-- Project 1 -->
+            <article
+              class="project-card reveal"
+              data-reveal
+              data-category="web-app"
+              data-title="Socially"
+              data-description="A full-featured social media application built with React, allowing users to create posts, interact with content, manage profiles, receive notifications, and more."
+              data-tech="React.js, React Router, React Query, Tailwind CSS, Axios, React Hook Form, Zod"
+              data-features="Authentication · Posts CRUD · Likes & Comments · Replies · Bookmarks · Notifications · Profile Management · Image Upload · Responsive UI"
+              data-demo="https://social-app-front9.vercel.app/"
+              data-code="https://github.com/RaniaGabal51/social-app.git"
+            >
+              <div class="project-media">
+                <img
+                  src="assets/images/project-social.PNG"
+                  alt="Socially project preview"
+                  loading="lazy"
+                />
+                <span class="project-category-pill">React</span>
+              </div>
+
+              <div class="p-6">
+                <h3 class="font-display font-semibold text-lg mb-2">
+                  Socially
+                </h3>
+
+                <p class="text-sm text-slate-600 dark:text-slate-300/80 mb-4">
+                  A modern social media application where users can create
+                  posts, interact with content, manage their profiles, save
+                  posts, and receive real-time-style notifications.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span class="tag">React</span>
+                  <span class="tag">React Query</span>
+                  <span class="tag">Tailwind</span>
+                  <span class="tag">Axios</span>
+                </div>
+
+                <div class="flex gap-3">
+                  <a
+                    href="https://social-app-front9.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                  >
+                    Live Demo
+                  </a>
+
+                  <a
+                    href="https://github.com/RaniaGabal51/social-app.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline btn-sm"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
             <article
               class="project-card reveal"
               data-reveal
@@ -660,13 +713,14 @@
                 </div>
 
                 <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="btn-primary btn-sm"
-                    data-open-modal
+                  <a
+                    id="modal-demo"
+                    href="https://adasa-front9.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    >Live Demo</a
                   >
-                    View Details
-                  </button>
 
                   <a
                     href="https://github.com/RaniaGabal51/Adasa.git"
@@ -680,7 +734,7 @@
               </div>
             </article>
 
-            <!-- Project 2 -->
+            <!-- Project 3 -->
             <article
               class="project-card reveal"
               data-reveal
@@ -719,14 +773,14 @@
                 </div>
 
                 <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="btn-primary btn-sm"
-                    data-open-modal
+                  <a
+                    id="modal-demo"
+                    href="https://e-commerce-nextjs-front9.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    >Live Demo</a
                   >
-                    View Details
-                  </button>
-
                   <a
                     href="https://github.com/RaniaGabal51/e-commerce-nextjs.git"
                     target="_blank"
@@ -739,7 +793,7 @@
               </div>
             </article>
 
-            <!-- Project 3 -->
+            <!-- Project 4 -->
             <article
               class="project-card reveal"
               data-reveal
@@ -773,13 +827,14 @@
                   ><span class="tag">LocalStorage</span>
                 </div>
                 <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="btn-primary btn-sm"
-                    data-open-modal
+                  <a
+                    id="modal-demo"
+                    href="https://raniagabal51.github.io/NutriPlan-/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    >Live Demo</a
                   >
-                    View Details
-                  </button>
                   <a
                     href="https://github.com/RaniaGabal51/NutriPlan-.git"
                     target="_blank"
@@ -791,7 +846,7 @@
               </div>
             </article>
 
-            <!-- Project 4 -->
+            <!-- Project 5 -->
             <article
               class="project-card reveal"
               data-reveal
@@ -825,13 +880,14 @@
                   ><span class="tag">Async/Await</span>
                 </div>
                 <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="btn-primary btn-sm"
-                    data-open-modal
+                  <a
+                    id="modal-demo"
+                    href="https://raniagabal51.github.io/Space-Explorer-Dashboard/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    >Live Demo</a
                   >
-                    View Details
-                  </button>
                   <a
                     href="https://github.com/RaniaGabal51/Space-Explorer-Dashboard.git"
                     target="_blank"
@@ -844,7 +900,7 @@
             </article>
 
             <!-- Project 5 -->
-            <article
+            <!-- <article
               class="project-card reveal"
               data-reveal
               data-category="web-app"
@@ -876,13 +932,14 @@
                   ><span class="tag">LocalStorage</span>
                 </div>
                 <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="btn-primary btn-sm"
-                    data-open-modal
+                  <a
+                    id="modal-demo"
+                    href="https://raniagabal51.github.io/ContactHub-/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    >Live Demo</a
                   >
-                    View Details
-                  </button>
                   <a
                     href="https://github.com/RaniaGabal51/ContactHub-.git"
                     target="_blank"
@@ -892,7 +949,7 @@
                   >
                 </div>
               </div>
-            </article>
+            </article> -->
 
             <!-- Project 6 -->
             <article
@@ -928,13 +985,14 @@
                   ><span class="tag">JavaScript</span>
                 </div>
                 <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="btn-primary btn-sm"
-                    data-open-modal
+                  <a
+                    id="modal-demo"
+                    href="https://raniagabal51.github.io/QuizMaster/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                    >Live Demo</a
                   >
-                    View Details
-                  </button>
                   <a
                     href="https://github.com/RaniaGabal51/QuizMaster.git"
                     target="_blank"
@@ -953,137 +1011,6 @@
           >
             No projects match your search. Try a different keyword or filter.
           </p>
-        </div>
-      </section>
-
-      <!-- ============ SERVICES ============ -->
-      <section id="services" class="section-pad">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-          <div class="text-center mb-14 reveal" data-reveal>
-            <p class="eyebrow justify-center">Services</p>
-            <h2 class="section-title">How I can help</h2>
-          </div>
-
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-card service-card reveal" data-reveal>
-              <div class="service-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
-                </svg>
-              </div>
-              <h3 class="font-display font-semibold text-lg mb-2">
-                Frontend Development
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300/80">
-                Turning designs into clean, maintainable, production-ready code.
-              </p>
-            </div>
-            <div class="glass-card service-card reveal" data-reveal>
-              <div class="service-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <rect x="5" y="2" width="14" height="20" rx="2" />
-                  <path d="M9 18h6" />
-                </svg>
-              </div>
-              <h3 class="font-display font-semibold text-lg mb-2">
-                Responsive Websites
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300/80">
-                Interfaces that feel native on any screen, from phones to
-                widescreens.
-              </p>
-            </div>
-            <div class="glass-card service-card reveal" data-reveal>
-              <div class="service-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M3 12h18M12 3v18" />
-                </svg>
-              </div>
-              <h3 class="font-display font-semibold text-lg mb-2">
-                Landing Pages
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300/80">
-                Focused, fast-loading pages designed to convert visitors into
-                action.
-              </p>
-            </div>
-            <div class="glass-card service-card reveal" data-reveal>
-              <div class="service-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M3 3v18h18M7 15l4-4 3 3 5-6" />
-                </svg>
-              </div>
-              <h3 class="font-display font-semibold text-lg mb-2">
-                Dashboards
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300/80">
-                Data-dense interfaces that stay readable, organized, and fast.
-              </p>
-            </div>
-            <div class="glass-card service-card reveal" data-reveal>
-              <div class="service-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M4 17V7a2 2 0 0 1 2-2h8l6 6v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                  />
-                  <path d="M14 5v6h6" />
-                </svg>
-              </div>
-              <h3 class="font-display font-semibold text-lg mb-2">
-                REST API Integration
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300/80">
-                Connecting interfaces to real data with clean, resilient fetch
-                logic.
-              </p>
-            </div>
-            <div class="glass-card service-card reveal" data-reveal>
-              <div class="service-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="m12 2 3 6 6.5 1-4.7 4.6 1.1 6.5L12 17l-5.9 3.1 1.1-6.5L2.5 9l6.5-1z"
-                  />
-                </svg>
-              </div>
-              <h3 class="font-display font-semibold text-lg mb-2">
-                UI Implementation
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300/80">
-                Pixel-accurate builds from Figma or design specs, with real
-                interactivity.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1122,7 +1049,7 @@
               <div class="glass-card p-6">
                 <p class="timeline-date">Aug 2025 — May 2026</p>
                 <h3 class="font-display font-semibold text-lg mb-1">
-                  Senior Digital Operations Specialist
+                  Digital Operations Specialist
                 </h3>
                 <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">
                   Innovologia
@@ -1469,11 +1396,7 @@
                   >Projects</a
                 >
               </li>
-              <li>
-                <a href="#services" class="hover:text-primary" data-nav-link
-                  >Services</a
-                >
-              </li>
+
               <li>
                 <a href="#contact" class="hover:text-primary" data-nav-link
                   >Contact</a
@@ -1557,77 +1480,6 @@
         <path d="m18 15-6-6-6 6" />
       </svg>
     </button>
-
-    <!-- ============ PROJECT MODAL ============ -->
-    <div id="project-modal" class="modal-overlay" aria-hidden="true">
-      <div
-        class="modal-panel glass-card"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-      >
-        <button
-          type="button"
-          id="modal-close"
-          class="icon-btn modal-close"
-          aria-label="Close project details"
-        >
-          <svg
-            class="w-5 h-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
-        </button>
-        <img id="modal-image" src="" alt="" class="modal-image" />
-        <div class="p-6 sm:p-8">
-          <h3
-            id="modal-title"
-            class="font-display font-bold text-2xl mb-2"
-          ></h3>
-          <p
-            id="modal-description"
-            class="text-slate-600 dark:text-slate-300/80 mb-5"
-          ></p>
-
-          <h4
-            class="font-display font-semibold text-sm uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2"
-          >
-            Technologies
-          </h4>
-          <p id="modal-tech" class="text-sm mb-5"></p>
-
-          <h4
-            class="font-display font-semibold text-sm uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2"
-          >
-            Key Features
-          </h4>
-          <p id="modal-features" class="text-sm mb-7"></p>
-
-          <div class="flex flex-wrap gap-3">
-            <a
-              id="modal-demo"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary"
-              >Live Demo</a
-            >
-            <a
-              id="modal-code"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-outline"
-              >GitHub</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/script.js"></script>
